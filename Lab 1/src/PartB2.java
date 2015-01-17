@@ -33,18 +33,19 @@ public class PartB2 {
 		float income = input.nextInt();
 		
 		if(income > 36250 && income <= 87850){
-			int tax = (int)(4991.25 + (((income + 25) - 36250) * .25));
-			System.out.println(Taxes + tax);
+			double tax= 4991.25 + (.25 * ((income - (income % 50) + 25) - 36250));
+			System.out.println(Math.round(tax));
+			
 		}
 		
 		if(income > 87850 && income <= 183250){
 			if(income >= 100000){
-				int tax = (int)((income * .28) - 6706.75);
+				double tax =((income * .28) - 6706.75);
 				System.out.println(Taxes + tax);
 			}
 			if(income < 100000){
-				int tax =(int) ((17891.25 + ((income - 87850) * .28) + 6.75));
-				System.out.println(Taxes + tax);
+				double tax = 17891.25 + (.28 * ((income - (income % 50) + 25) - 87850));
+				System.out.println(Taxes + Math.round(tax));
 			}
 		}
 	}
@@ -59,8 +60,8 @@ public class PartB2 {
 				System.out.println(Taxes + tax);
 			}
 			if(income < 100000){
-				int tax = (int) ((9982.5 + (((income + 25) - 72500) * .25)) + .25);
-				System.out.println(Taxes + tax);
+				double tax = 9982.5 + (.25 * ((income - (income % 50) + 25) - 72500));
+				System.out.println(Taxes + Math.round(tax));
 			}
 		}
 	}
@@ -75,8 +76,8 @@ public class PartB2 {
 				System.out.println(Taxes + tax);
 			}
 			if(income < 100000){
-				int tax = (int) ((14228.75 + (((income + 25) - 73200) * .28)) + .25);
-				System.out.println(Taxes + tax);
+				double tax = 14228.75 + (.28 * ((income - (income % 50) + 25) - 73200));
+				System.out.println(Taxes + Math.round(tax));
 			}
 		}
 	}
@@ -91,9 +92,10 @@ public class PartB2 {
 				System.out.println(Taxes + tax);
 			}
 			if(income < 100000){
-				int tax = (int) ((6652.50 + (((income + 25) - 48600) * .25)) + .25);
-				System.out.println(Taxes + tax);
+				double tax = 6652.5 + (.25 * ((income - (income % 50) + 25) - 48600));
+				System.out.println(Taxes + Math.round(tax));
 			}
 		}
 	}
 }
+
